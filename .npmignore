@@ -1,0 +1,6 @@
+src/
+dist/index.html
+tslint.json
+tsconfig.json
+rollup.config.js
+.gitignore

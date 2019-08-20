@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Intersect Directive</title>
+  <style>
+    body { margin: 0; }
+    [v-cloak] { display: none; }
+    header, footer {
+      background-color: #4fc08d;
+      color: #fff;
+      min-height: 100px;
+    }
+    header, footer, main {
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    footer { position: relative; }
+    main { min-height: 2000px; }
+    .scroll-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      padding: 10px;
+      background-color: #35495e;
+      color: #fff;
+      transform: none;
+    }
+    footer.visible .scroll-top {
+      position: absolute;
+      top: -15px;
+      bottom: auto;
+      transform: translateY(-100%);
+    }
+    .message {
+      margin: 0;
+    }
+    .message.sticky {
+      position: fixed;
+      top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header v-intersect="{ onChange: onHeaderIntersect }">
+      Header
+    </header>
+    <main>
+      <p v-cloak class="message" :class="{ sticky: !isHeaderVisible }">isHeaderVisible?: {{isHeaderVisible}}</p>
+    </main>
+    <footer v-intersect="{ true: ['visible'] }">Footer
+      <a href="#top" class="scroll-top">Scroll top</a>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="./vue-intersect-directive.js"></script>
+  <script>
+    new Vue({
+      data: {
+        isHeaderVisible: true,
+      },
+      methods: {
+        onHeaderIntersect(isIntersecting, el, options) {
+          this.isHeaderVisible = isIntersecting
+        }
+      }
+    }).$mount('#app')
+  </script>
+</body>
+</html>
