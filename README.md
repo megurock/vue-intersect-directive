@@ -34,7 +34,7 @@ Vue.use(VueIntersectDirective)
 
 ```html
 <script src="vue.js"></script>
-<script src="vue-intersect-directive/dist/vue-intersect-directive.js"></script>
+<script src="vue-intersect-directive/dist/vue-intersect-directive.min.js"></script>
 ```
 
 # Usage
