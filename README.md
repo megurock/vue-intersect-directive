@@ -21,13 +21,13 @@ Via yarn:
 yarn add vue-intersect-directive
 ```
 
-## Import
+## Importd
 
 ```js
 import Vue from 'vue'
-import VueIntersectPlugin from 'vue-intersect-directive'
+import VueIntersectDirective from 'vue-intersect-directive'
 
-Vue.use(VueIntersectPlugin)
+Vue.use(VueIntersectDirective)
 ```
 
 ## Browser

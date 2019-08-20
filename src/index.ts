@@ -11,12 +11,12 @@ const install: PluginFunction<any> = (_Vue: VueConstructor) => {
   Vue.directive('intersect', intersectDirective)
 }
 
-const VueIntersectPlugin: PluginObject<any> = {
+const VueIntersectDirective: PluginObject<any> = {
   install,
 }
 
 if (window.Vue) {
-  Vue.use(VueIntersectPlugin.install)
+  Vue.use(VueIntersectDirective.install)
 }
 
-export default VueIntersectPlugin
+export default VueIntersectDirective
