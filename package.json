@@ -11,7 +11,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "rollup -w -c -m inline",
-    "build": "npm run build:iife && npm run build:esm && npm run build:umd", 
+    "build": "npm run build:iife && npm run build:esm && npm run build:umd",
     "build:iife": "rollup -c build/rollup.config.iife.js",
     "build:esm": "rollup -c build/rollup.config.esm.js",
     "build:umd": "rollup -c build/rollup.config.umd.js",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/vue": "^2.0.0",
     "rollup": "^1.19.4",
+    "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript": "^1.0.1",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
