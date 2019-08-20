@@ -1,4 +1,6 @@
-(function(g,f){typeof exports==='object'&&typeof module!=='undefined'?f(exports,require('vue')):typeof define==='function'&&define.amd?define(['exports','vue'],f):(g=g||self,f(g['vue-intersect-directive']={},g.Vue));}(this,function(exports, Vue){'use strict';Vue=Vue&&Vue.hasOwnProperty('default')?Vue['default']:Vue;/*! *****************************************************************************
+import Vue from 'vue';
+
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -59,7 +61,9 @@ function __generator(thisArg, body) {
         } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
-}// --------------------------------------------------------------------------
+}
+
+// --------------------------------------------------------------------------
 // Intersect
 // --------------------------------------------------------------------------
 var Intersect = /** @class */ (function () {
@@ -161,7 +165,9 @@ var Intersect = /** @class */ (function () {
         }
     };
     return Intersect;
-}());var intersectMap = new Map();
+}());
+
+var intersectMap = new Map();
 /**
  *
  */
@@ -185,7 +191,9 @@ var unbind = function (el, binding, vnode, oldVnode) {
 var intersectDirective = {
     bind: bind,
     unbind: unbind,
-};var install = function (_Vue) {
+};
+
+var install = function (_Vue) {
     Vue.directive('intersect', intersectDirective);
 };
 var VueIntersectDirective = {
@@ -193,4 +201,6 @@ var VueIntersectDirective = {
 };
 if (window.Vue) {
     Vue.use(VueIntersectDirective.install);
-}exports.default=VueIntersectDirective;Object.defineProperty(exports,'__esModule',{value:true});}));
+}
+
+export default VueIntersectDirective;
