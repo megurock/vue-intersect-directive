@@ -5,6 +5,7 @@
   "main": "dist/vue-intersect-directive.js",
   "module": "dist/vue-intersect-directive.esm.js",
   "unpkg": "dist/vue-intersect-directive.min.js",
+  "types": "dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/megurock/vue-intersect-directive.git"
@@ -12,11 +13,12 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "rollup  -c build/rollup.config.iife.js -w",
-    "build": "npm run build:iife && npm run build:esm && npm run build:umd",
+    "build": "npm run build:iife && npm run build:esm && npm run build:umd && npm run build:dts",
     "build:iife": "rollup -c build/rollup.config.iife.js",
     "build:esm": "rollup -c build/rollup.config.esm.js",
     "build:umd": "rollup -c build/rollup.config.umd.js",
     "prepublish": "npm run build",
+    "build:dts": "tsc src/index.ts -d --emitDeclarationOnly --declarationDir dist/types",
     "lint": "tslint --project . --fix"
   },
   "keywords": [

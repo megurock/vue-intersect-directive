@@ -193,7 +193,7 @@ var intersectDirective = {
     unbind: unbind,
 };
 
-var install = function (_Vue) {
+var install = function () {
     Vue.directive('intersect', intersectDirective);
 };
 var VueIntersectDirective = {

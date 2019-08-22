@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-const install: PluginFunction<never> = (_Vue: VueConstructor) => {
+const install: PluginFunction<never> = () => {
   Vue.directive('intersect', intersectDirective)
 }
 
