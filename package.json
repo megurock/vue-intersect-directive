@@ -17,7 +17,7 @@
     "build:iife": "rollup -c build/rollup.config.iife.js",
     "build:esm": "rollup -c build/rollup.config.esm.js",
     "build:umd": "rollup -c build/rollup.config.umd.js",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build:dts": "tsc src/index.ts -d --emitDeclarationOnly --declarationDir dist/types",
     "lint": "tslint --project . --fix"
   },
