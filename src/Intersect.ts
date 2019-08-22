@@ -81,7 +81,7 @@ export default class Intersect {
       this.el.classList.add(...options)
     } else {
       for (const prop of Object.keys(options)) {
-        this.el.style.setProperty(prop, options[prop])
+        this.el.style[prop as any] = options[prop]
       }
     }
   }
