@@ -21,7 +21,7 @@ Via yarn:
 yarn add vue-intersect-directive
 ```
 
-## Importd
+## Import
 
 ```js
 import Vue from 'vue'
@@ -112,8 +112,7 @@ You can set the Intersection Observer options with `v-intersect` value. Refer to
 # Example 
 
 [Demo](https://megurock.github.io/vue-intersect-directive/dist/)  
-Source: [dist/index.html](https://github.com/megurock/vue-intersect-directive/blob/master/dist/index.html
-
+Source: [dist/index.html](https://github.com/megurock/vue-intersect-directive/blob/master/dist/index.html)
 
 # To Do
 
