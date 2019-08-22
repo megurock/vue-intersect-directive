@@ -109,6 +109,12 @@ You can set the Intersection Observer options with `v-intersect` value. Refer to
 }">Hello</div>
 ```
 
+# Example 
+
+[Demo](https://megurock.github.io/vue-intersect-directive/dist/)  
+Source: [dist/index.html](https://github.com/megurock/vue-intersect-directive/blob/master/d)
+
+
 # To Do
 
 - Add test.
