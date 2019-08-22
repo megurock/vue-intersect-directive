@@ -26,9 +26,9 @@ const unbind: DirectiveFunction = (el: HTMLElement, binding: DirectiveBinding, v
 /**
  *
  */
-const intersectDirective: DirectiveOptions = {
+const IntersectDirective: DirectiveOptions = {
   bind,
   unbind,
 }
 
-export default intersectDirective
+export default IntersectDirective
