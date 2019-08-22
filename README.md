@@ -100,6 +100,10 @@ You can set the Intersection Observer options with `v-intersect` value. Refer to
 }">Hello</div>
 ```
 
+# To Do
+
+- Add test.
+
 # License
 
 MIT
