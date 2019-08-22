@@ -202,14 +202,15 @@
     var install = function () {
         Vue.directive('intersect', intersectDirective);
     };
-    var VueIntersectDirective = {
+    var VueIntersect = {
         install: install,
     };
     if (window.Vue) {
-        Vue.use(VueIntersectDirective.install);
+        Vue.use(VueIntersect.install);
     }
 
-    exports.default = VueIntersectDirective;
+    exports.IntersectDirective = intersectDirective;
+    exports.default = VueIntersect;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

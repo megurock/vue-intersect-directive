@@ -196,11 +196,12 @@ var intersectDirective = {
 var install = function () {
     Vue.directive('intersect', intersectDirective);
 };
-var VueIntersectDirective = {
+var VueIntersect = {
     install: install,
 };
 if (window.Vue) {
-    Vue.use(VueIntersectDirective.install);
+    Vue.use(VueIntersect.install);
 }
 
-export default VueIntersectDirective;
+export default VueIntersect;
+export { intersectDirective as IntersectDirective };

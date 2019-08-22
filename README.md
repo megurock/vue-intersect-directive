@@ -25,9 +25,18 @@ yarn add vue-intersect-directive
 
 ```js
 import Vue from 'vue'
-import VueIntersectDirective from 'vue-intersect-directive'
+import VueIntersect from 'vue-intersect-directive'
 
-Vue.use(VueIntersectDirective)
+Vue.use(VueIntersect)
+```
+
+Or: 
+
+```js
+import Vue from 'vue'
+import { IntersectDirective }  from 'vue-intersect-directive'
+
+Vue.directive('intersect', IntersectDirective)
 ```
 
 ## Browser

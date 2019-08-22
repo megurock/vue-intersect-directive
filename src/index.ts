@@ -1,5 +1,5 @@
 import intersectDirective from './intersect-directive'
-import Vue, { VueConstructor, PluginObject, PluginFunction } from 'vue'
+import Vue, { PluginObject, PluginFunction } from 'vue'
 
 declare global {
   interface Window {
@@ -11,12 +11,13 @@ const install: PluginFunction<never> = () => {
   Vue.directive('intersect', intersectDirective)
 }
 
-const VueIntersectDirective: PluginObject<never> = {
+const VueIntersect: PluginObject<never> = {
   install,
 }
 
 if (window.Vue) {
-  Vue.use(VueIntersectDirective.install)
+  Vue.use(VueIntersect.install)
 }
 
-export default VueIntersectDirective
+export { intersectDirective as IntersectDirective }
+export default VueIntersect
