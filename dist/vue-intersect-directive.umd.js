@@ -151,7 +151,7 @@
             else {
                 for (var _i = 0, _b = Object.keys(options); _i < _b.length; _i++) {
                     var prop = _b[_i];
-                    this.el.style.setProperty(prop, options[prop]);
+                    this.el.style[prop] = options[prop];
                 }
             }
         };
