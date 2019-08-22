@@ -1,4 +1,4 @@
-import intersectDirective from './intersect-directive';
+import IntersectDirective from './intersect-directive';
 import Vue, { PluginObject } from 'vue';
 declare global {
     interface Window {
@@ -6,5 +6,5 @@ declare global {
     }
 }
 declare const VueIntersect: PluginObject<never>;
-export { intersectDirective as IntersectDirective };
+export { IntersectDirective };
 export default VueIntersect;

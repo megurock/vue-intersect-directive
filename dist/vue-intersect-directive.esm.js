@@ -188,13 +188,13 @@ var unbind = function (el, binding, vnode, oldVnode) {
 /**
  *
  */
-var intersectDirective = {
+var IntersectDirective = {
     bind: bind,
     unbind: unbind,
 };
 
 var install = function () {
-    Vue.directive('intersect', intersectDirective);
+    Vue.directive('intersect', IntersectDirective);
 };
 var VueIntersect = {
     install: install,
@@ -204,4 +204,4 @@ if (window.Vue) {
 }
 
 export default VueIntersect;
-export { intersectDirective as IntersectDirective };
+export { IntersectDirective };

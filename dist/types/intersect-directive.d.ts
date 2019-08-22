@@ -2,5 +2,5 @@ import { DirectiveOptions } from 'vue';
 /**
  *
  */
-declare const intersectDirective: DirectiveOptions;
-export default intersectDirective;
+declare const IntersectDirective: DirectiveOptions;
+export default IntersectDirective;

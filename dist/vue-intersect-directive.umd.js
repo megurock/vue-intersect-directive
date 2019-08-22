@@ -194,13 +194,13 @@
     /**
      *
      */
-    var intersectDirective = {
+    var IntersectDirective = {
         bind: bind,
         unbind: unbind,
     };
 
     var install = function () {
-        Vue.directive('intersect', intersectDirective);
+        Vue.directive('intersect', IntersectDirective);
     };
     var VueIntersect = {
         install: install,
@@ -209,7 +209,7 @@
         Vue.use(VueIntersect.install);
     }
 
-    exports.IntersectDirective = intersectDirective;
+    exports.IntersectDirective = IntersectDirective;
     exports.default = VueIntersect;
 
     Object.defineProperty(exports, '__esModule', { value: true });
