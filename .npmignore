@@ -1,4 +1,5 @@
 src/
+build/
 dist/index.html
 tslint.json
 tsconfig.json
