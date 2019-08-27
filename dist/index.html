@@ -18,7 +18,10 @@
       padding: 20px;
     }
     footer { position: relative; }
-    main { min-height: 2000px; }
+    main { 
+      min-height: 2000px; 
+      position: relative;
+    }
     .scroll-top {
       position: fixed;
       bottom: 15px;
@@ -41,6 +44,34 @@
       position: fixed;
       top: 20px;
     }
+    .box {
+      position: absolute;
+      top: 800px;
+      width: 20%;
+      height: 0;
+      padding-bottom: 20%;
+      box-sizing: border-box;
+      background-color: #ccc;
+      transform: translateX(-50%);
+    }
+    .box > span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 2vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+    .box--visible {
+      background-color: #4fc08d;
+    }
+    .box--a { left: 25%; }
+    .box--b { left: 50%; }
+    .box--c { left: 75%; }
   </style>
 </head>
 <body>
@@ -50,6 +81,9 @@
     </header>
     <main>
       <p v-cloak class="message" :class="{ sticky: !isHeaderVisible }">isHeaderVisible?: {{isHeaderVisible}}</p>
+      <div class="box box--a" v-intersect="{ true: ['box--visible'] }"><span>threshold: <br>0 (default)</span></div>
+      <div class="box box--b" v-intersect="{ true: ['box--visible'], observerOptions: { threshold: 0.5 } }"><span>threshold: <br>0.5</span></div>
+      <div class="box box--c" v-intersect="{ true: ['box--visible'], observerOptions: { threshold: 1 } }"><span>threshold: <br>1</span></div>
     </main>
     <footer v-intersect="{ true: ['visible'] }">Footer
       <a href="#top" class="scroll-top">Scroll top</a>

@@ -94,6 +94,8 @@ For the details of the `options` argument, refer to ["Directive Hook Arguments"]
 
 You can set the Intersection Observer options with `v-intersect` value. Refer to ["Creating an intersection observer"](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) for more details.
 
+For instance, if you set the threshold value of observerOptions to 1, the element will not be recognized as intersected unless its whole area is inside the viewport. Please check the [demo page](https://megurock.github.io/vue-intersect-directive/dist/) to see what it really means.
+
 ```html
 <div v-intersect="{ 
   observerOptions: {
