@@ -36,7 +36,5 @@
     "tslint": "^5.19.0",
     "typescript": "^3.5.3"
   },
-  "dependencies": {
-    "user": "0.0.0"
-  }
+  "dependencies": {}
 }
