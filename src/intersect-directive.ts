@@ -10,7 +10,7 @@ const intersectMap: Map<HTMLElement, Intersect> = new Map<HTMLElement, Intersect
 const bind: DirectiveFunction = (el: HTMLElement, binding: DirectiveBinding, vnode: VNode, oldVnode: VNode) => {
   const intersect: Intersect = new Intersect(vnode.context!)
   intersectMap.set(el, intersect)
-  intersect.onBind(el, binding)
+  intersect.bind(el, binding)
 }
 
 /**
@@ -19,7 +19,7 @@ const bind: DirectiveFunction = (el: HTMLElement, binding: DirectiveBinding, vno
 const unbind: DirectiveFunction = (el: HTMLElement, binding: DirectiveBinding, vnode: VNode, oldVnode: VNode) => {
   const intersect: Intersect | undefined = intersectMap.get(el)
   if (intersect) {
-    intersect.onUnbind(el, binding)
+    intersect.unbind(el, binding)
   }
 }
 
