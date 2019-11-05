@@ -8,6 +8,7 @@ interface IntersectOptions {
     true?: StyleOptions;
     false?: StyleOptions;
     onChange?: IntersectChangeHandler;
+    disposeWhen?: boolean;
 }
 declare type IntersectChangeHandler = (isInterSecting: boolean, el: HTMLElement, options: IntersectOptions) => any;
 export default class Intersect {
@@ -23,11 +24,11 @@ export default class Intersect {
     /**
      *
      */
-    onBind(el: HTMLElement, binding: DirectiveBinding): Promise<void>;
+    bind(el: HTMLElement, binding: DirectiveBinding): Promise<void>;
     /**
      *
      */
-    onUnbind(el: HTMLElement, binding: DirectiveBinding): void;
+    unbind(el: HTMLElement, binding?: DirectiveBinding): void;
     /**
      *
      */
