@@ -8,6 +8,7 @@ interface IntersectOptions {
   true?: StyleOptions
   false?: StyleOptions
   onChange?: IntersectChangeHandler
+  disposeWhen?: boolean
 }
 
 type IntersectChangeHandler = (isInterSecting: boolean, el: HTMLElement, options: IntersectOptions) => any
@@ -29,7 +30,7 @@ export default class Intersect {
   /**
    *
    */
-  public async onBind(el: HTMLElement, binding: DirectiveBinding) {
+  public async bind(el: HTMLElement, binding: DirectiveBinding) {
     await this.vm.$nextTick()
     //
     const observerOptions: IntersectionObserverInit = { ...binding.value.observerOptions }
@@ -40,6 +41,7 @@ export default class Intersect {
     this.options = {
       true: binding.value.true,
       false: binding.value.false,
+      disposeWhen: binding.value.disposeWhen,
     }
     this.callback = binding.value.onChange
   }
@@ -47,7 +49,7 @@ export default class Intersect {
   /**
    *
    */
-  public onUnbind(el: HTMLElement, binding: DirectiveBinding) {
+  public unbind(el: HTMLElement, binding?: DirectiveBinding) {
     if (this.interSectionObserver) {
       this.interSectionObserver.unobserve(el)
     }
@@ -70,6 +72,11 @@ export default class Intersect {
     //
     if (this.callback) {
       this.callback(entry.isIntersecting, this.el, this.options)
+    }
+    //
+    if (this.options.disposeWhen !== undefined) {
+      const shouldDispose: boolean = entry.isIntersecting === this.options.disposeWhen
+      if (shouldDispose) this.unbind(this.el)
     }
   }
 

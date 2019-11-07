@@ -56,7 +56,7 @@ Attach `foo` class to an element only when it is inside the viewport.
 <div v-intersect="{ true: ['foo'] }">Hello</div>
 ```
 
-Attach `bar` and `baz` class to an elment only when it is outside the viewport.
+Attach `bar` and `baz` classes to an elment only when it is outside the viewport.
 
 ```html
 <div v-intersect="{ false: ['bar', 'baz'] }">Hello</div>
@@ -75,19 +75,31 @@ For the details of the `options` argument, refer to ["Directive Hook Arguments"]
 
 ```html
 <div id="app">
-  <div v-intersect="{ onChange: handleIntersection }">Hello</div>
+  <p v-intersect="{ onChange: handleIntersection }">Hello</p>
 </div>
 <script>
   new Vue({
     methods: {
       handleIntersection(isIntersecting, el, options) {
         console.log(isIntersecting) // true or false
-        console.log(el)             // reference to the elment (header in this case)
+        console.log(el)             // reference to the elment (<p> element in this case)
         console.log(options)        // value of v-intersect 
       }
     }
   }).$mount('#app')
 </script>
+```
+
+## Stop observing
+
+Use `disposeWhen` property to stop observing intersection of the element. For instance, if you set the value of the property to true, the element will no longer be observed once it comes inside the viewport.
+
+```html
+<div id="app">
+  // when this element comes inside the viewport, `foo` class is attached.
+  // The attached class will not be removed even when the element goes outside the viewport.
+  <p v-intersect="{ true: [ 'foo' ], disposeWhen: true }">Hello</p>
+</div>
 ```
 
 ## Configuration for the Intersection Observer (optional)

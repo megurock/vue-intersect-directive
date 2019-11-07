@@ -2,7 +2,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue')) :
     typeof define === 'function' && define.amd ? define(['exports', 'vue'], factory) :
     (global = global || self, factory(global['vue-intersect-directive'] = {}, global.Vue));
-}(this, function (exports, Vue) { 'use strict';
+}(this, (function (exports, Vue) { 'use strict';
 
     Vue = Vue && Vue.hasOwnProperty('default') ? Vue['default'] : Vue;
 
@@ -82,7 +82,7 @@
         /**
          *
          */
-        Intersect.prototype.onBind = function (el, binding) {
+        Intersect.prototype.bind = function (el, binding) {
             return __awaiter(this, void 0, void 0, function () {
                 var observerOptions;
                 return __generator(this, function (_a) {
@@ -100,6 +100,7 @@
                             this.options = {
                                 true: binding.value.true,
                                 false: binding.value.false,
+                                disposeWhen: binding.value.disposeWhen,
                             };
                             this.callback = binding.value.onChange;
                             return [2 /*return*/];
@@ -110,7 +111,7 @@
         /**
          *
          */
-        Intersect.prototype.onUnbind = function (el, binding) {
+        Intersect.prototype.unbind = function (el, binding) {
             if (this.interSectionObserver) {
                 this.interSectionObserver.unobserve(el);
             }
@@ -138,6 +139,12 @@
             //
             if (this.callback) {
                 this.callback(entry.isIntersecting, this.el, this.options);
+            }
+            //
+            if (this.options.disposeWhen !== undefined) {
+                var shouldDispose = entry.isIntersecting === this.options.disposeWhen;
+                if (shouldDispose)
+                    this.unbind(this.el);
             }
         };
         /**
@@ -180,7 +187,7 @@
     var bind = function (el, binding, vnode, oldVnode) {
         var intersect = new Intersect(vnode.context);
         intersectMap.set(el, intersect);
-        intersect.onBind(el, binding);
+        intersect.bind(el, binding);
     };
     /**
      *
@@ -188,7 +195,7 @@
     var unbind = function (el, binding, vnode, oldVnode) {
         var intersect = intersectMap.get(el);
         if (intersect) {
-            intersect.onUnbind(el, binding);
+            intersect.unbind(el, binding);
         }
     };
     /**
@@ -214,4 +221,4 @@
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));
