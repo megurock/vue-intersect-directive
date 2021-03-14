@@ -1,6 +1,6 @@
 {
   "name": "vue-intersect-directive",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Vue directive to observe intersection of an element with viewport.",
   "main": "dist/vue-intersect-directive.js",
   "module": "dist/vue-intersect-directive.esm.js",
