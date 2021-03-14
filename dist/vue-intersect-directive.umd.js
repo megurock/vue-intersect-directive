@@ -4,7 +4,7 @@
     (global = global || self, factory(global['vue-intersect-directive'] = {}, global.Vue));
 }(this, (function (exports, Vue) { 'use strict';
 
-    Vue = Vue && Vue.hasOwnProperty('default') ? Vue['default'] : Vue;
+    Vue = Vue && Object.prototype.hasOwnProperty.call(Vue, 'default') ? Vue['default'] : Vue;
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
