@@ -206,7 +206,7 @@ var install = function () {
 var VueIntersect = {
     install: install,
 };
-if (window.Vue) {
+if (Vue) {
     Vue.use(VueIntersect.install);
 }
 
