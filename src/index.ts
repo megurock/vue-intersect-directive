@@ -15,7 +15,7 @@ const VueIntersect: PluginObject<never> = {
   install,
 }
 
-if (window.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
   Vue.use(VueIntersect.install)
 }
 
